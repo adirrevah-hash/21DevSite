@@ -59,7 +59,7 @@
       ticking = false;
       var y = window.scrollY || window.pageYOffset;
       var shift = Math.min(y * 0.25, 120);
-      heroImg.style.transform = "translateY(" + shift + "px) scale(1.06)";
+      heroImg.style.transform = "translateY(" + shift + "px) scale(1.05)";
     };
     window.addEventListener(
       "scroll",
