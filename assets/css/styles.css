@@ -262,6 +262,20 @@ p {
 .hero-scroll { transition-delay: 0.3s; }
 
 /* =====================================================================
+   PAGE BODY — shared backdrop behind everything after the hero
+   ===================================================================== */
+
+.page-body {
+  position: relative;
+  background-color: var(--ink);
+  background-image: url("../img/bg-swirl.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  /* always shows the full swirl top-to-bottom, however tall this block is */
+  background-size: auto 100%;
+}
+
+/* =====================================================================
    PLATFORMS
    ===================================================================== */
 

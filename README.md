@@ -30,7 +30,8 @@ assets/
   css/styles.css   — all styling, one file, CSS custom properties at the top
   js/main.js       — entrance/scroll-reveal animations, hero parallax,
                       image-fallback handling, footer year (vanilla, no deps)
-  img/             — hero.jpg, footer-photo.jpg and og-image.jpg go here
+  img/             — hero.jpg, footer-photo.jpg, bg-swirl.jpg (backdrop
+                      behind platforms+footer) and og-image.jpg go here
 ```
 
 ## Design notes
