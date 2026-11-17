@@ -77,7 +77,8 @@ p {
 .wrap {
   max-width: var(--wrap);
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
 }
 
 .sr-only {
@@ -187,6 +188,8 @@ p {
   width: 100%;
   padding-block-end: clamp(48px, 9vh, 112px);
   padding-block-start: clamp(96px, 20vh, 220px);
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
   text-align: center;
 }
 
