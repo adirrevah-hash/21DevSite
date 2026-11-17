@@ -268,11 +268,13 @@ p {
 .page-body {
   position: relative;
   background-color: var(--ink);
-  background-image: url("../img/bg-swirl.jpg");
-  background-repeat: no-repeat;
-  background-position: top right;
+  /* a dark wash over the swirl (first layer, painted on top) toned it down;
+     raise/lower that 0.55 alpha to taste */
+  background-image: linear-gradient(rgba(10, 10, 12, 0.55), rgba(10, 10, 12, 0.55)), url("../img/bg-swirl.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, top right;
   /* always shows the full swirl top-to-bottom, however tall this block is */
-  background-size: auto 100%;
+  background-size: 100% 100%, auto 100%;
 }
 
 /* =====================================================================
