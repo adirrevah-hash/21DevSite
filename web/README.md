@@ -1,10 +1,16 @@
 # web
 
-A React + TypeScript + Tailwind CSS project, set up for shadcn/ui, containing the **Glass Folder Cards** component.
+The אופק הצללה (pergola/shading) site: a React + TypeScript + Tailwind CSS project, set up for shadcn/ui.
 
 ## Why this subfolder exists
 
-The rest of this repository (`index.html` at the project root) is a static HTML/CSS hero section — no React, no TypeScript, no Tailwind, no bundler. The component this folder was built for is a `.tsx` React component, so it needs a project that can actually compile and run TSX. This folder is that project, scaffolded with Vite.
+`index.html` at the project root is the original static HTML/CSS/JS hero mockup — no React, no TypeScript, no Tailwind, no bundler. The Glass Folder Cards component is a `.tsx` React component, so it needed a project that could actually compile and run TSX. This folder is that project, scaffolded with Vite; the hero was then ported into it (`src/components/Hero.tsx`, same markup and CSS as the root `index.html`) so the whole page — hero *and* the new projects gallery — now lives in one place. The root `index.html` is kept only as the original static reference; this folder is the live site going forward.
+
+## Page structure
+
+- `src/components/Hero.tsx` — the hero (ported 1:1 from the root `index.html`, styles in `src/styles/site.css`).
+- `src/components/ProjectsGallery.tsx` — "כל פרויקט מקבל תיק משלו", right after the hero: three `GlassFolder`s standing in for project categories (residential pergolas, commercial shading, electric awnings), each fanning out real case-study names on click.
+- Both are mounted in `src/App.tsx`.
 
 ## Stack
 
@@ -34,8 +40,8 @@ shadcn's CLI and every shadcn component's own imports assume primitives live at 
 
 ## The component
 
-- `src/components/ui/glass-folder-cards.tsx` — the component itself (self-contained: only imports React, generates its own artwork on a `<canvas>`, no external images or icon libraries needed).
-- `src/components/glass-folder-cards-demo.tsx` — the three-folder demo, mounted in `src/App.tsx`.
+- `src/components/ui/glass-folder-cards.tsx` — the primitive (self-contained: only imports React, generates its own artwork on a `<canvas>`, no external images or icon libraries needed).
+- `src/components/glass-folder-cards-demo.tsx` — the original three-folder demo with its generic content, kept as a reference for the component's own props/behavior. Not mounted on the real site; `ProjectsGallery.tsx` is the themed version that is.
 
 ## Run it
 

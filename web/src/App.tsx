@@ -1,7 +1,13 @@
-import GlassFolderCardsDemo from './components/glass-folder-cards-demo'
+import Hero from "./components/Hero"
+import ProjectsGallery from "./components/ProjectsGallery"
 
 function App() {
-  return <GlassFolderCardsDemo />
+  return (
+    <>
+      <Hero />
+      <ProjectsGallery />
+    </>
+  )
 }
 
 export default App
