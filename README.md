@@ -5,29 +5,24 @@ the folder as-is on any static host (Netlify, Vercel, GitHub Pages, S3, etc.).
 
 ## Before it goes live
 
-**1. Add the real hero photo.**
-Drop it at `assets/img/hero.jpg` (≥ 1600px wide, landscape works best). That's
-the only step — the `<img>` tag already points there. Until it exists, the
-hero shows a dark gradient placeholder instead of a broken-image icon.
-
-For the social-share preview image (WhatsApp/Facebook link previews), also
-add `assets/img/og-image.jpg` (1200×630px is the standard size).
-
-**2. Replace the artist name.**
-It's set to `HIGHDRA` everywhere. Search `index.html` for `HIGHDRA` (hero,
-booking copy's implicit context, footer, `<title>`, meta tags) and replace it.
-
-**3. Fill in the real links.**
-Every link in `index.html` is a working-shaped placeholder with an obvious
-`REPLACE_WITH_…` token in it — search the file for `REPLACE_WITH` to find
-all nine (8 platform buttons, appearing twice — once in the platforms grid,
-once in the footer — plus the WhatsApp number in Booking). For the WhatsApp
-link, `wa.me` numbers are written with no `+`, spaces or leading zeros
-(country code + number, e.g. `https://wa.me/15551234567`).
-
-**4. Set the real domain.**
-Search for `REPLACE_WITH_DOMAIN` in the `<head>` (canonical link + Open
-Graph/Twitter tags) and swap in the live URL once you know it.
+- [x] **Hero photo** — `assets/img/hero.jpg` is the real photo. `object-position`
+      in `styles.css` is tuned to it specifically (keeps the hands/headphones
+      in frame on both mobile and wide-desktop crops); re-tune that one line
+      if the photo ever changes.
+- [x] **All 8 platform links** — Instagram, Facebook, YouTube, TikTok, Apple
+      Music, Spotify, SoundCloud and Beatport are wired to the real URLs
+      (each appears twice: platforms grid + footer).
+- [ ] **Social-share preview image.** For WhatsApp/Facebook link previews, add
+      `assets/img/og-image.jpg` (1200×630px). The meta tags already point there.
+- [ ] **WhatsApp number.** Search `index.html` for `REPLACE_WITH_PHONE_NUMBER`
+      in the Booking section's `wa.me` link. `wa.me` numbers are written with
+      no `+`, spaces or leading zeros (country code + number, e.g.
+      `https://wa.me/15551234567`).
+- [ ] **Real domain.** Search for `REPLACE_WITH_DOMAIN` in the `<head>`
+      (canonical link + Open Graph/Twitter tags) and swap in the live URL.
+- [ ] **Mirrored photo?** The supplied hero photo's on-stage logos/branding
+      read backwards (mirror image) — flag to the artist/photographer in case
+      it should be flipped; nothing in the code does that automatically.
 
 ## Structure
 
