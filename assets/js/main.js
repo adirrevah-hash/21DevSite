@@ -28,7 +28,7 @@
     });
   });
 
-  var revealTargets = [document.getElementById("platformGrid"), document.getElementById("bookingInner")].filter(Boolean);
+  var revealTargets = [document.getElementById("platformGrid")].filter(Boolean);
 
   if ("IntersectionObserver" in window && revealTargets.length) {
     var io = new IntersectionObserver(

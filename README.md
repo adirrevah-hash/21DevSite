@@ -12,12 +12,10 @@ the folder as-is on any static host (Netlify, Vercel, GitHub Pages, S3, etc.).
 - [x] **All 8 platform links** — Instagram, Facebook, YouTube, TikTok, Apple
       Music, Spotify, SoundCloud and Beatport are wired to the real URLs
       (each appears twice: platforms grid + footer).
+- [x] **Footer photo** — `assets/img/footer-photo.jpg`, shown next to the
+      "DJ HIGHDRA" wordmark.
 - [ ] **Social-share preview image.** For WhatsApp/Facebook link previews, add
       `assets/img/og-image.jpg` (1200×630px). The meta tags already point there.
-- [ ] **WhatsApp number.** Search `index.html` for `REPLACE_WITH_PHONE_NUMBER`
-      in the Booking section's `wa.me` link. `wa.me` numbers are written with
-      no `+`, spaces or leading zeros (country code + number, e.g.
-      `https://wa.me/15551234567`).
 - [ ] **Real domain.** Search for `REPLACE_WITH_DOMAIN` in the `<head>`
       (canonical link + Open Graph/Twitter tags) and swap in the live URL.
 - [ ] **Mirrored photo?** The supplied hero photo's on-stage logos/branding
@@ -32,7 +30,7 @@ assets/
   css/styles.css   — all styling, one file, CSS custom properties at the top
   js/main.js       — entrance/scroll-reveal animations, hero parallax,
                       image-fallback handling, footer year (vanilla, no deps)
-  img/             — hero.jpg and og-image.jpg go here
+  img/             — hero.jpg, footer-photo.jpg and og-image.jpg go here
 ```
 
 ## Design notes
