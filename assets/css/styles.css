@@ -406,9 +406,9 @@ p {
 }
 
 .footer-social {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   gap: 10px;
 }
 
