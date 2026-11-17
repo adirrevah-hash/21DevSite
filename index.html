@@ -147,6 +147,21 @@
 </footer>
 </div>
 
+<!-- Background music: browsers block audio with sound until the visitor
+     interacts, so it starts paused — this button is that interaction. -->
+<audio id="bgAudio" src="assets/audio/who-am-i.mp3" loop preload="none"></audio>
+<button type="button" id="audioToggle" class="audio-toggle" aria-pressed="false" aria-label="Play background music">
+  <svg class="icon audio-icon-on" viewBox="0 0 24 24" aria-hidden="true" hidden>
+    <path d="M4 9v6h4l5 5V4L8 9H4Z" />
+    <path d="M16.5 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M19 6a9 9 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+  </svg>
+  <svg class="icon audio-icon-off" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M4 9v6h4l5 5V4L8 9H4Z" />
+    <path d="M16.3 9.7l4.4 4.4M20.7 9.7l-4.4 4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+  </svg>
+</button>
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>

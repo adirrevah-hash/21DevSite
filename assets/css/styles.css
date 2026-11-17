@@ -57,6 +57,13 @@ svg {
   max-width: 100%;
 }
 
+/* author rules above would otherwise silently beat the UA stylesheet's own
+   [hidden]{display:none}, since author-origin CSS always wins over user-agent
+   CSS regardless of specificity */
+[hidden] {
+  display: none;
+}
+
 svg.icon {
   fill: currentColor;
 }
@@ -464,6 +471,58 @@ p {
     justify-content: space-between;
     text-align: start;
   }
+}
+
+/* =====================================================================
+   BACKGROUND MUSIC TOGGLE
+   ===================================================================== */
+
+.audio-toggle {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  bottom: max(20px, env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(20, 20, 23, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--paper);
+  cursor: pointer;
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.audio-toggle:hover,
+.audio-toggle:focus-visible {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+  color: var(--accent);
+}
+
+.audio-toggle[aria-pressed="true"] {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  color: var(--accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent), 0 10px 24px -10px rgba(0, 0, 0, 0.6);
+}
+
+.audio-toggle .icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.audio-toggle[aria-pressed="true"] .audio-icon-on {
+  animation: audioPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes audioPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
 }
 
 /* ---------- reduced motion: no scroll animation, no parallax, everything settled ---------- */

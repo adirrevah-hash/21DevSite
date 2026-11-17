@@ -28,10 +28,12 @@ the folder as-is on any static host (Netlify, Vercel, GitHub Pages, S3, etc.).
 index.html
 assets/
   css/styles.css   — all styling, one file, CSS custom properties at the top
-  js/main.js       — entrance/scroll-reveal animations, hero parallax,
-                      image-fallback handling, footer year (vanilla, no deps)
+  js/main.js       — entrance/scroll-reveal animations, hero parallax, the
+                      background-music toggle, image-fallback handling,
+                      footer year (vanilla, no deps)
   img/             — hero.jpg, footer-photo.jpg, bg-swirl.jpg (backdrop
                       behind platforms+footer) and og-image.jpg go here
+  audio/who-am-i.mp3 — background music loop
 ```
 
 ## Design notes
@@ -44,3 +46,8 @@ assets/
   font, no external request).
 - Respects `prefers-reduced-motion`: entrance/scroll animations and the hero
   parallax are skipped entirely for anyone with that setting on.
+- **Background music** (`#audioToggle` / `#bgAudio`) starts paused — browsers
+  block audio-with-sound from starting on its own before the visitor
+  interacts with the page, so the fixed speaker button in the corner *is*
+  that first interaction. Loops via the native `loop` attribute; `preload="none"`
+  so the 2MB file isn't fetched until someone actually presses play.

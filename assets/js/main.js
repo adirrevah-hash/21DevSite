@@ -16,6 +16,34 @@
     });
   }
 
+  // ---- background music toggle (independent of reduced-motion: muting
+  // audio isn't a motion preference) ---------------------------------
+  var audio = document.getElementById("bgAudio");
+  var audioBtn = document.getElementById("audioToggle");
+  if (audio && audioBtn) {
+    audio.volume = 0.6;
+    var iconOn = audioBtn.querySelector(".audio-icon-on");
+    var iconOff = audioBtn.querySelector(".audio-icon-off");
+    audioBtn.addEventListener("click", function () {
+      if (audio.paused) {
+        audio.play().catch(function () {});
+      } else {
+        audio.pause();
+      }
+    });
+    var syncState = function () {
+      var playing = !audio.paused;
+      audioBtn.setAttribute("aria-pressed", String(playing));
+      audioBtn.setAttribute("aria-label", playing ? "Mute background music" : "Play background music");
+      // SVGElement doesn't reliably reflect the `.hidden` IDL property in
+      // every browser, so toggle the content attribute directly.
+      if (iconOn) iconOn.toggleAttribute("hidden", !playing);
+      if (iconOff) iconOff.toggleAttribute("hidden", playing);
+    };
+    audio.addEventListener("play", syncState);
+    audio.addEventListener("pause", syncState);
+  }
+
   if (reduceMotion) return;
 
   // ---- entrance: hero reveals on load, sections reveal on scroll -------
